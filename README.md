@@ -9,7 +9,7 @@ Este proxecto consiste en crear varios servidores Apache usando Docker e compart
 
 Primeiro, comprobei se xa tiña a imaxe de Apache (`httpd`) descargada. Para iso usei o seguinte comando:
 
-```bash
+```
 docker images
 ```
 
