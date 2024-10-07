@@ -15,7 +15,7 @@ docker images
 
 Como non a tiña, tiven que descargala coa orde:
 
-```bash
+```
 docker pull httpd
 ```
 
@@ -25,7 +25,7 @@ Creei un directorio chamado `htdocs` onde gardar a páxina HTML que o servidor A
 
 Para solucionar isto, optei por crear un novo directorio dentro do meu directorio persoal, onde sei que teño permisos de escritura:
 
-```bash
+```
 mkdir ~/meu_htdocs
 ```
 
@@ -56,7 +56,7 @@ Agora que tiña a páxina HTML lista, creei o primeiro contedor chamado `asir_ht
 
 O comando para crealo foi:
 
-```bash
+```
 docker run -dit --name asir_httpd -p 8080:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
 ```
 
@@ -76,7 +76,7 @@ A continuación, creei un segundo contedor chamado `asir_web1`, mapeando o porto
 
 O comando foi:
 
-```bash
+```
 docker run -dit --name asir_web1 -p 8000:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
 ```
 
@@ -86,7 +86,7 @@ Finalmente, creei un terceiro contedor chamado `asir_web2`, esta vez mapeando o 
 
 O comando foi:
 
-```bash
+```
 docker run -dit --name asir_web2 -p 8090:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
 ```
 
@@ -94,7 +94,7 @@ docker run -dit --name asir_web2 -p 8090:80 -v ~/meu_htdocs:/usr/local/apache2/h
 
 Para asegurarme de que todos os contedores estaban en execución, usei o seguinte comando:
 
-```bash
+```
 docker ps
 ```
 
@@ -121,32 +121,32 @@ O proxecto está listo e pódese ver en funcionamento nos portos 8080, 8000 e 80
 ## Comandos utilizados:
 
 - Descargar a imaxe de Apache:
-  ```bash
+  ```
   docker pull httpd
   ```
 
 - Crear o directorio `htdocs` con permisos suficientes:
-  ```bash
+  ```
   mkdir ~/meu_htdocs
   ```
 
 - Crear o contedor `asir_httpd`:
-  ```bash
+  ```
   docker run -dit --name asir_httpd -p 8080:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
   ```
 
 - Crear o contedor `asir_web1`:
-  ```bash
+  ```
   docker run -dit --name asir_web1 -p 8000:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
   ```
 
 - Crear o contedor `asir_web2`:
-  ```bash
+  ```
   docker run -dit --name asir_web2 -p 8090:80 -v ~/meu_htdocs:/usr/local/apache2/htdocs/ httpd
   ```
 
 - Comprobar os contedores en execución:
-  ```bash
+  ```
   docker ps
   ```
 
